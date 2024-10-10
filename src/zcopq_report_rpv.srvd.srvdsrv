@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def COPQ'
+define service ZCOPQ_REPORT_RPV {
+  expose ZCOPQ_REPORT_RPV as COPQ;
+}

@@ -1,0 +1,126 @@
+@Metadata.layer:#PARTNER
+@EndUserText.label: 'Itemcode'
+@UI: { headerInfo:{typeName: 'COPQ Report ',
+                    typeNamePlural: 'COPQ Report',
+                    title:{ type: #STANDARD,label: 'COPQ',value: 'Itemcode'}},
+                    presentationVariant: [{ sortOrder: [{ by: 'Itemcode',direction: #DESC }] }]}
+
+
+
+annotate view ZCOPQ_REPORT_RPV with
+{
+  @UI.facet: [ { id:              'COPQ Report',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'COPQ',
+                        position:        30 },
+                      { id:              'Itemcode',
+                        purpose:         #STANDARD,
+                        type:            #LINEITEM_REFERENCE,
+                        label:           'Itemcode',
+                        position:        30,
+                        targetElement:   'Itemcode'} ]
+
+  @UI: { lineItem: [{ position: 10,label: 'Order' }],
+  identification: [{ position: 10,label: 'Order' }] }
+  orderr;
+
+  @UI.lineItem:[ { position: 20, label: 'Posting Date' } ]
+  @UI.selectionField: [{ position: 20 }]
+  @UI.identification: [{ position: 20,label: 'Posting Date' }]
+  Startingd;
+
+  @UI: {  lineItem: [ { position: 40, label: 'Plant' } ],
+       identification: [ { position: 40, label: 'Plant' } ],
+       selectionField: [{  position: 40,element: 'PLANT'}]
+             }
+  Plant;
+  @UI:{lineItem: [{ position: 50,label: 'Storage Location' }],
+      identification: [{ position: 50,label: 'Storage Location' }] }
+  storage_loc;
+
+  @UI:{lineItem: [{ position: 60,label: 'Locaion Type' }],
+     identification: [{ position: 60,label: 'Locaion Type' }] }
+  Slotype;
+
+
+
+  @UI:{ lineItem: [{ position: 70, label: 'Material' }],
+            identification: [{ position: 70,label: 'Material' }],
+            selectionField: [{ position: 70}] }
+  Itemcode;
+  @UI:{ lineItem: [{ position: 71,label: 'Batch' }],
+  identification: [{ position: 71,label: 'Batch' }] }
+  Batch;
+
+  @UI:{ lineItem: [{ position: 80,label: 'Item Type' }],
+  identification: [{ position: 80,label: 'Item Type' }] }
+  Vtype;
+
+  @UI:{lineItem: [{ position: 90,label: 'Material Description' }],
+     identification: [{ position: 90,label: 'Material Description' }] }
+  Itemdesc;
+
+  @UI:{lineItem: [{ position: 110,label: 'Requirement Quantity' }],
+       identification: [{ position: 110,label: 'Requirement Quantity' }] }
+  Qty;
+
+  @UI:{lineItem: [{ position: 120,label: 'Base Unit' }],
+     identification: [{ position: 120,label: 'Base Unit' }] }
+  Uom;
+
+  @UI:{lineItem: [{ position: 121,label: 'Movement Type' }],
+     identification: [{ position: 121,label: 'Movement Type' }] }
+  Movementtype;
+  
+  
+  @UI:{lineItem: [{ position: 130,label: 'T.Mat Cost' }],
+      identification: [{ position: 130,label: 'T.Mat Cost' }] }
+  Totalcost;
+  
+  @UI:{lineItem: [{ position: 140,label: '  Material Cost' }],
+        identification: [{ position: 140,label: 'Material Cost' }] }
+ MaterialV;
+
+  
+
+
+
+//  @UI:{lineItem: [{ position: 150,label: 'Activity Type' }],
+//     identification: [{ position: 150,label: 'Activity Type' }] }
+//  MaterialV;
+
+  @UI:{lineItem: [{ position: 160,label: 'Machine Value' }],
+      identification: [{ position: 160,label: 'Machine Value' }] }
+  Machineval;
+
+  @UI:{lineItem: [{ position: 170,label: 'Labour value' }],
+   identification: [{ position: 170,label: 'Labour value' }] }
+  labval;
+
+  @UI:{lineItem: [{ position: 180,label: 'Power value' }],
+  identification: [{ position: 180,label: 'Power value' }] }
+  Powerval;
+
+
+//  @UI:{lineItem: [{ position: 190,label: 'T Machine Value' }],
+//       identification: [{ position: 190,label: ' T Machine Value' }] }
+//  Machinev;
+//
+//
+//
+//  @UI:{lineItem: [{ position: 200,label: 'T Labour value' }],
+//    identification: [{ position: 200,label: 'T Labour value' }] }
+//  Labva;
+//
+//  @UI:{lineItem: [{ position: 210,label: ' T Power value' }],
+//   identification: [{ position: 210,label: 'T Power value' }] }
+//  PowerV;
+
+
+
+
+  @UI:{lineItem: [{ position: 220,label: 'Overall  value' }],
+   identification: [{ position: 220,label: 'Overall value' }] }
+  Overallvalue;
+}
